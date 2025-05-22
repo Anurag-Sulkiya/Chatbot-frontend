@@ -334,12 +334,29 @@
   transition: all 0.2s;
   width: 90%;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .suggested-query-btn:hover {
   background-color: #EEEAFD; /* Slightly darker light purple */
   transform: translateY(-1px);
   border-color: #D1C4F1;
+  box-shadow: 0 4px 12px rgba(126, 93, 237, 0.2);
+}
+
+/* Special styling for help redirect buttons */
+.help-redirect-btn {
+  background: linear-gradient(135deg, #7E5DED 0%, #6B48E3 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #7E5DED !important;
+  font-weight: 500;
+}
+
+.help-redirect-btn:hover {
+  background: linear-gradient(135deg, #9B7BF0 0%, #8A65E6 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(126, 93, 237, 0.4) !important;
 }
 
 .message {
@@ -390,6 +407,75 @@
   color: #FFFFFF;
 }
 
+/* Enhanced Typing Message Styles */
+.typing-message {
+  animation: fadeIn 0.3s ease-out;
+  max-width: 80%;
+}
+
+.typing-icon {
+  background-color: #E8E8F0;
+  animation: typingIconPulse 2s ease-in-out infinite;
+}
+
+.typing-text {
+  background-color: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  padding: 8px 12px;
+  min-width: 60px;
+}
+
+.typing-indicator-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.typing-text-label {
+  font-style: italic;
+  color: #7E5DED;
+  font-weight: 500;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: #7E5DED;
+  border-radius: 50%;
+  display: inline-block;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
 /* Procurement Shortcuts */
 .procurement-shortcuts {
   width: 100%;
@@ -432,6 +518,20 @@
   background-color: #EEEAFD; /* Light purple hover */
   transform: translateY(-1px);
   border-color: #D1C4F1;
+  box-shadow: 0 4px 12px rgba(126, 93, 237, 0.2);
+}
+
+.help-redirect-shortcut {
+  background: linear-gradient(135deg, #7E5DED 0%, #6B48E3 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #7E5DED !important;
+  font-weight: 500;
+}
+
+.help-redirect-shortcut:hover {
+  background: linear-gradient(135deg, #9B7BF0 0%, #8A65E6 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(126, 93, 237, 0.4) !important;
 }
 
 .shortcuts-buttons button svg {
@@ -497,6 +597,16 @@
   box-shadow: 0 0 0 2px rgba(126, 93, 237, 0.1);
 }
 
+.chatbot-input input:disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.chatbot-input input:disabled::placeholder {
+  color: #999;
+}
+
 .chatbot-input button {
   background-color: #3A3A5C; /* Brand purple */
   color: #FFFFFF;
@@ -511,7 +621,7 @@
   transition: all 0.2s;
 }
 
-.chatbot-input button:hover {
+.chatbot-input button:hover:not(:disabled) {
   background-color: #6B48E3; /* Darker purple */
   transform: scale(1.05);
 }
@@ -519,6 +629,7 @@
 .chatbot-input button:disabled {
   background-color: #B8A7E8; /* Muted purple */
   cursor: not-allowed;
+  transform: none;
 }
 
 /* Flash Animation Styles */
@@ -540,6 +651,10 @@
 
 .chat-open {
   animation: chatOpenFlash 0.6s ease-out;
+}
+
+.redirect-flash {
+  animation: redirectFlash 0.6s ease-out;
 }
 
 .header-flash {
@@ -601,6 +716,30 @@
   100% { transform: scale(1); }
 }
 
+@keyframes redirectFlash {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  }
+  25% { 
+    transform: scale(1.02); 
+    box-shadow: 0 5px 35px rgba(126, 93, 237, 0.4);
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 40px rgba(126, 93, 237, 0.6), 
+                0 0 20px rgba(126, 93, 237, 0.4) inset;
+  }
+  75% { 
+    transform: scale(1.02); 
+    box-shadow: 0 5px 35px rgba(126, 93, 237, 0.4);
+  }
+  100% { 
+    transform: scale(1); 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
 @keyframes chatOpenFlash {
   0% { 
     transform: translateY(20px) scale(0.95); 
@@ -658,22 +797,6 @@
     opacity: 0.7; 
     transform: scale(1.02);
   }
-}
-
-/* Enhanced Suggestion Button Hover */
-.suggested-query-btn:hover {
-  background-color: #EEEAFD;
-  transform: translateY(-1px);
-  border-color: #D1C4F1;
-  box-shadow: 0 4px 12px rgba(126, 93, 237, 0.2);
-}
-
-/* Enhanced Shortcut Button Hover */
-.shortcuts-buttons button:hover {
-  background-color: #EEEAFD;
-  transform: translateY(-1px);
-  border-color: #D1C4F1;
-  box-shadow: 0 4px 12px rgba(126, 93, 237, 0.2);
 }
 
 /* Message Hover Effects */
