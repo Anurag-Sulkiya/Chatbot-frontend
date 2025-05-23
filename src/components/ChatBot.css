@@ -866,3 +866,57 @@
 .chatbot-messages::-webkit-scrollbar-thumb:hover {
   background: #D1C4F1;
 }
+
+/* Add these styles to your ChatBot.css file */
+
+/* Connection Status Indicator */
+.connection-status {
+  padding: 8px 15px;
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 1px solid #E8E8F0;
+}
+
+.connection-status.error {
+  background-color: #FFF3F3;
+  color: #D73527;
+  border-bottom-color: #F5C6C6;
+}
+
+.connection-status span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Error Message Styling */
+.message.error-message .message-text {
+  background-color: #FFF3F3 !important;
+  color: #D73527 !important;
+  border: 1px solid #F5C6C6;
+}
+
+.message.error-message .message-icon {
+  background-color: #F5C6C6 !important;
+  color: #D73527 !important;
+}
+
+/* Input placeholder for connection issues */
+.chatbot-input input[placeholder*="Connection issue"] {
+  border-color: #F5C6C6;
+  background-color: #FFF9F9;
+}
+
+/* Loading state enhancements */
+.chatbot-input input:disabled {
+  background-color: #F5F5F5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.chatbot-input button:disabled {
+  background-color: #B8A7E8;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
