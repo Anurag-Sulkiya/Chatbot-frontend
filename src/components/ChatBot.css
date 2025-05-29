@@ -581,16 +581,16 @@
 
 .chatbot-input input {
   flex: 1;
-  /* padding: 12px 16px; */
-  padding: 8px;
+  padding: 12px 16px;
+  /* padding: 8px; */
   border: 1px solid #E0D9F7; /* Light purple border */
-  background-color: #3A3A5C; 
+  background-color: #c7c7e1; 
   border-radius: 24px;
   margin-right: 10px;
   font-size: 14px;
   outline: none;
   transition: all 0.2s;
-  color: #000000;
+  color: #ffffff;
 }
 
 .chatbot-input input::placeholder {
@@ -924,4 +924,244 @@
   background-color: #B8A7E8;
   cursor: not-allowed;
   opacity:0.6;
+}
+
+/* Add these styles to your ChatBot.css file for rich content */
+
+/* Rich Message Content Styles */
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.message-steps {
+  background-color: #F5F3FE;
+  border-left: 3px solid #7E5DED;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.message-steps h4 {
+  margin: 0 0 8px 0;
+  color: #7E5DED;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-steps ol {
+  margin: 0;
+  padding-left: 16px;
+  color: #4A4A6E;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.message-steps li {
+  margin-bottom: 4px;
+}
+
+.message-tips {
+  background-color: #F0F9FF;
+  border-left: 3px solid #0EA5E9;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.message-tips h4 {
+  margin: 0 0 8px 0;
+  color: #0EA5E9;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-tips ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #4A4A6E;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.message-tips li {
+  margin-bottom: 4px;
+}
+
+.message-features {
+  background-color: #F0FDF4;
+  border-left: 3px solid #22C55E;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.message-features h4 {
+  margin: 0 0 8px 0;
+  color: #22C55E;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-features ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #4A4A6E;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.message-features li {
+  margin-bottom: 4px;
+}
+
+.message-navigation {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navigation-button {
+  background: linear-gradient(135deg, #7E5DED 0%, #6B48E3 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(126, 93, 237, 0.3);
+}
+
+.navigation-button:hover {
+  background: linear-gradient(135deg, #9B7BF0 0%, #8A65E6 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(126, 93, 237, 0.4);
+}
+
+.navigation-button svg {
+  font-size: 12px;
+}
+
+.message-info {
+  background-color: #FEF3C7;
+  border-left: 3px solid #F59E0B;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.message-info p {
+  margin: 0;
+  color: #92400E;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.required-permissions {
+  background-color: #FEE2E2;
+  border-left: 3px solid #EF4444;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.required-permissions p {
+  margin: 0;
+  color: #B91C1C;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Enhanced error message styling */
+.message.error-message .message-content {
+  border-left: 3px solid #EF4444;
+  padding-left: 12px;
+}
+
+/* User message adjustments for rich content */
+.message.user .message-content {
+  align-items: flex-end;
+}
+
+.message.user .message-steps,
+.message.user .message-tips,
+.message.user .message-features,
+.message.user .message-info,
+.message.user .required-permissions {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.message.user .message-steps h4,
+.message.user .message-tips h4,
+.message.user .message-features h4 {
+  color: #FFFFFF;
+}
+
+.message.user .message-steps ol,
+.message.user .message-tips ul,
+.message.user .message-features ul,
+.message.user .message-info p,
+.message.user .required-permissions p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animation for rich content */
+.message-steps,
+.message-tips,
+.message-features,
+.message-navigation,
+.message-info,
+.required-permissions {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .message-steps,
+  .message-tips,
+  .message-features,
+  .message-info,
+  .required-permissions {
+    padding: 8px 10px;
+    margin-top: 6px;
+  }
+  
+  .message-steps h4,
+  .message-tips h4,
+  .message-features h4 {
+    font-size: 13px;
+  }
+  
+  .message-steps ol,
+  .message-tips ul,
+  .message-features ul,
+  .message-info p,
+  .required-permissions p {
+    font-size: 12px;
+  }
+  
+  .navigation-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
