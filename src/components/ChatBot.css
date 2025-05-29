@@ -23,7 +23,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1e2749 0%, #0f1a3a 100%);
+  background: linear-gradient(135deg, #7E5DED 0%,  #000034 100%);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -36,9 +36,13 @@
   overflow: visible;
 }
 
+.company-logo{
+  width: 50px;
+}
+
 .chat-widget-button:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(30, 39, 73, 0.6);
+  box-shadow: 0 8px 25px rgba(10, 10, 10, 0.6);
 }
 
 /* Robot Design */
@@ -96,7 +100,7 @@
 .robot-face {
   width: 20px;
   height: 12px;
-  background: #1e2749;
+  background:  #7E5DED;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -133,8 +137,8 @@
   position: absolute;
   top: -12px;
   right: -25px;
-  background: #00D4FF;
-  color: #1e2749;
+  background: #7E5DED;
+  color: #0c0c0c;
   font-size: 10px;
   font-weight: bold;
   padding: 4px 8px;
@@ -150,9 +154,9 @@
   left: 8px;
   width: 0;
   height: 0;
-  border-left: 4px solid transparent;
+  border-left: 4px solid transparent; 
   border-right: 4px solid transparent;
-  border-top: 4px solid #00D4FF;
+  border-top: 4px solid #7E5DED;
 }
 
 /* Pulse Rings */
@@ -175,7 +179,7 @@
   transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  border: 2px solid rgba(0, 212, 255, 0.2);
+  border: 2px solid #7E5DED(0, 212, 255, 0.2);
   border-radius: 50%;
   animation: pulse 2s ease-out infinite 1s;
 }
@@ -569,7 +573,7 @@
 /* Input Styles */
 .chatbot-input {
   display: flex;
-  padding: 15px;
+  padding: 10px;
   border-top: 1px solid #E8E8F0;
   background-color: #FFFFFF;
   transition: all 0.3s ease;
@@ -577,19 +581,20 @@
 
 .chatbot-input input {
   flex: 1;
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
+  padding: 8px;
   border: 1px solid #E0D9F7; /* Light purple border */
+  background-color: #3A3A5C; 
   border-radius: 24px;
   margin-right: 10px;
   font-size: 14px;
   outline: none;
-  background-color: #3A3A5C;
   transition: all 0.2s;
-  color: #ffffff;
+  color: #000000;
 }
 
 .chatbot-input input::placeholder {
-  color: #ffffff; /* Lighter gray for placeholder */
+  color: #4A4A6E; /* Lighter gray for placeholder */
 }
 
 .chatbot-input input:focus {
@@ -612,12 +617,12 @@
   color: #FFFFFF;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.2s;
 }
 
@@ -918,5 +923,5 @@
 .chatbot-input button:disabled {
   background-color: #B8A7E8;
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity:0.6;
 }
